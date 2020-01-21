@@ -6,6 +6,10 @@ const menuSchema = new Schema({
         type: String,
         required: true
     },
+    category: {
+        type: String,
+        required: true
+    },
     description: String,
     price: {
         type: String,
