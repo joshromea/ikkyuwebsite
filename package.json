@@ -1,38 +1,38 @@
 {
-  "name": "ikkyu_website",
-  "version": "0.1.0",
-  "private": true,
+  "name": "ikkyuwebsite",
+  "version": "1.0.0",
+  "description": "server folder for ikkyu",
+  "main": "server/server.js",
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "concurrently": "^5.0.2",
     "express": "^4.17.1",
-    "mongodb": "^3.5.0",
-    "mongoose": "^5.8.7",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "if-env": "^1.0.4",
+    "is-empty": "^1.2.0",
+    "mongodb": "^3.5.2",
+    "mongoose": "^5.8.9"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.2",
+    "nodemon": "^2.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "seed": "node server/scripts/seedDB.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "cd server && node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshromea/ikkyuwebsite.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "author": "Josh Romea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshromea/ikkyuwebsite/issues"
+  },
+  "homepage": "https://github.com/joshromea/ikkyuwebsite#readme"
 }
