@@ -11,6 +11,7 @@ const menuSchema = new Schema({
         required: true
     },
     description: String,
+    image: String,
     price: {
         type: String,
         required: true
