@@ -4,12 +4,14 @@
   "description": "server folder for ikkyu",
   "main": "server/server.js",
   "dependencies": {
+    "bootstrap": "^4.5.2",
     "concurrently": "^5.0.2",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "is-empty": "^1.2.0",
     "mongodb": "^3.5.2",
-    "mongoose": "^5.8.9"
+    "mongoose": "^5.8.9",
+    "react-bootstrap": "^1.3.0"
   },
   "devDependencies": {
     "concurrently": "^5.0.2",
